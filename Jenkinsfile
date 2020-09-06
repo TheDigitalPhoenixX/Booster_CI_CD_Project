@@ -7,7 +7,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 // Repo is automatically  checked out
-                sh 'docker stop BoosterCICD || true'
+                sh 'docker stop BoosterCICD_Master || true'
             }
         }
         stage('Build Image') {
@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker run --rm -d -p 8001:8000 --name BoosterCICD digitalphoenixx/boostercicd:latest'
+                sh 'docker run --rm -d -p 8001:8000 --name BoosterCICD_Master digitalphoenixx/boostercicd:latest'
             }
         }
     }
