@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'docker run --rm -d -p 8000:8000 --name BoosterCICD digitalphoenixx/boostercicd:latest'
+                sh 'docker run --rm -d -p 8001:8000 --name BoosterCICD digitalphoenixx/boostercicd:latest'
             }
         }
     }
