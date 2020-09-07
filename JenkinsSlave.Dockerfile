@@ -27,6 +27,5 @@ RUN apt-get install openjdk-8-jdk -qq \
 RUN mkdir -p jenkins_home \
     && chmod 777 jenkins_home
 
-USER jenkins
 WORKDIR /jenkins_home
-CMD ["/bin/bash"]
+ENTRYPOINT service ssh start && tail -F /dev/null
